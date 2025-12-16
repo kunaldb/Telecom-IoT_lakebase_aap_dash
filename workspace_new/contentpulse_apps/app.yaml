@@ -1,0 +1,34 @@
+command: ["python", "app.py"]
+
+env:
+  # PostgreSQL Database (from DatabaseCatalog)
+  - name: PGDATABASE
+    value: "pg_contentpulse_kunal-gaurav"
+  
+  # PostgreSQL Host (from Lakebase instance)
+  - name: PGHOST
+    value: "instance-f60d62f1-e44a-43c7-813f-58138e0552fd.database.cloud.databricks.com"
+  
+  # PostgreSQL Port
+  - name: PGPORT
+    value: "5432"
+  
+  # SSL Mode (required for Databricks)
+  - name: PGSSLMODE
+    value: "require"
+  
+  # Application Name
+  - name: PGAPPNAME
+    value: "contentpulse_dashboard"
+  
+  # Schema and Table Configuration
+  - name: SCHEMA_NAME
+    value: "publishing"
+  
+  - name: TABLE_NAME
+    value: "content_engagement_synced"
+  
+  # Lakebase Instance Name (for OAuth token generation)
+  - name: INSTANCE_NAME
+    value: "kunal-gaurav-lakebase-instance"
+
